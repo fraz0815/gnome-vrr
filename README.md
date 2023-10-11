@@ -10,7 +10,18 @@ In both folders run
 
     makepkg -si
 
+or
+
+    makepkg --nocheck -si
+    
 You possibly have to use nocheck or comment out the check sections.
+
+In a clean VM both packages and their tests are succesful.
+
+Personally I did not switch to Gnome 45 yet and some patches from Fedora are not used, like
+
+    0001-keyboard-Use-new-gnome-desktop-api-for-getting-defau.patch
+
 
 ## New variable needed
     gsettings set org.gnome.mutter experimental-features "['variable-refresh-rate']"
