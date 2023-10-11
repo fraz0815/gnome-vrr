@@ -111,13 +111,15 @@ pkgver() {
 }
 
 prepare() {
-  cd $pkgname
+  cd "$srcdir"
+  mv gnome-control-center gnome-control-center-vrr
+  cd "$pkgname"
   
-   git apply -3 ../0001-keyboard-Use-new-gnome-desktop-api-for-getting-defau.patch
-   git apply -3 ../734.patch
-
   # Install bare logos into pixmaps, not icons
   git apply -3 ../pixmaps-dir.diff
+
+  # Apply the VRR MR
+  patch -p1 < ../734.patch
 
   git submodule init subprojects/gvc
   git submodule set-url subprojects/gvc "$srcdir/libgnome-volume-control"
