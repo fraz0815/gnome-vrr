@@ -53,7 +53,7 @@ depends=(
   libxml2
   pango
   polkit
-  setxkbmap
+ #setxkbmap
   smbclient
   sound-theme-freedesktop
   tecla
