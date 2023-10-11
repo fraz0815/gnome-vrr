@@ -1,11 +1,13 @@
-# gnome-vrr
-Fedora spec files for Mutter & GNOME Control Center with [Dor Askayo's Wayland VRR MR](https://gitlab.gnome.org/GNOME/mutter/-/merge_requests/1154) applied.
+# WIP Gnome 45
 
-#### Mutter
-![Build Status](https://copr.fedorainfracloud.org/coprs/kylegospo/gnome-vrr/package/mutter/status_image/last_build.png?)
+## gnome-vrr
+Arch PKGBUILD files for Mutter & GNOME Control Center with [Dor Askayo's Wayland VRR MR](https://gitlab.gnome.org/GNOME/mutter/-/merge_requests/1154) applied.
+Adopted from [KyleGospo (Fedora)](https://github.com/KyleGospo/gnome-vrr) and [AUR: mutter-vrr](https://aur.archlinux.org/packages/mutter-vrr) + [AUR: gnome-console-center_vrr](https://aur.archlinux.org/packages/gnome-control-center-vrr)
 
-#### GNOME Control Center
-![Build Status](https://copr.fedorainfracloud.org/coprs/kylegospo/gnome-vrr/package/gnome-control-center/status_image/last_build.png?)
+## New variable needed
+    gsettings set org.gnome.mutter experimental-features "['variable-refresh-rate']"
+Should be apllied automatically through patches.
 
-# Releases
-You can get releases for Fedora from my [Copr](https://copr.fedorainfracloud.org/coprs/kylegospo/gnome-vrr/).
+## Mouse Cursor fix
+1. Disable the use hardware cursor – set the MUTTER_DEBUG_DISABLE_HW_CURSORS=1 environment variable.
+2. Disable the use of the atomic KMS API – set the MUTTER_DEBUG_FORCE_KMS_MODE=simple environment variable.
