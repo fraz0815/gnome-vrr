@@ -29,7 +29,7 @@ depends=(
   libxkbcommon-x11
   libxkbfile
   pipewire
-  setxkbmap
+ #setxkbmap
   startup-notification
   xorg-xwayland
 )
